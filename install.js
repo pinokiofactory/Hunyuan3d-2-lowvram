@@ -1,6 +1,13 @@
 module.exports = {
   run: [
     {
+      when: "{{platform === 'win32'}}",
+      method: "shell.run",
+      params: {
+        message: "set"
+      }
+    },
+    {
       method: "shell.run",
       params: {
         message: [
