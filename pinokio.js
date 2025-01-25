@@ -2,7 +2,7 @@ const path = require('path')
 module.exports = {
   version: "3.3.20",
   title: "Hunyuan3D-2-LowVRAM",
-  description: "[NVIDIA ONLY] Low VRAM version of Hunyuan3D-2: High-Resolution 3D Assets Generation with Large Scale Hunyuan3D Diffusion Models. https://github.com/Tencent/Hunyuan3D-2",
+  description: "[NVIDIA ONLY] Run Hunyuan3D-2 with 6GB VRAM: High-Resolution 3D Assets Generation with Large Scale Hunyuan3D Diffusion Models. https://github.com/deepbeepmeep/Hunyuan3D-2GP"
   icon: "icon.png",
   menu: async (kernel, info) => {
     let installed = info.exists("app/env")
