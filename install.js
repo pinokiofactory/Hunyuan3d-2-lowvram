@@ -37,6 +37,7 @@ module.exports = {
       params: {
         venv: "../../../env",                // Edit this to customize the venv folder path
         env: {
+          USE_NINJA: 0,
           DISTUTILS_USE_SDK: 1
         },
         path: "app/hy3dgen/texgen/custom_rasterizer",                // Edit this to customize the path to start the shell from
@@ -50,6 +51,7 @@ module.exports = {
       params: {
         venv: "../../../env",                // Edit this to customize the venv folder path
         env: {
+          USE_NINJA: 0,
           DISTUTILS_USE_SDK: 1
         },
         path: "app/hy3dgen/texgen/differentiable_renderer",                // Edit this to customize the path to start the shell from
