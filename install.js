@@ -42,28 +42,28 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        venv: "../../../env",                // Edit this to customize the venv folder path
+        venv: "env",                // Edit this to customize the venv folder path
         env: {
           USE_NINJA: 0,
           DISTUTILS_USE_SDK: 1
         },
-        path: "app/hy3dgen/texgen/custom_rasterizer",                // Edit this to customize the path to start the shell from
+        path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "python setup.py install"
+          "uv pip install ./hy3dgen/texgen/custom_rasterizer --no-build-isolation"
         ]
       }
     },
     {
       method: "shell.run",
       params: {
-        venv: "../../../env",                // Edit this to customize the venv folder path
+        venv: "env",                // Edit this to customize the venv folder path
         env: {
           USE_NINJA: 0,
           DISTUTILS_USE_SDK: 1
         },
-        path: "app/hy3dgen/texgen/differentiable_renderer",                // Edit this to customize the path to start the shell from
+        path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "python setup.py install"
+          "uv pip install ./hy3dgen/texgen/differentiable_renderer --no-build-isolation"
         ]
       }
     },
