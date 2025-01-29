@@ -10,7 +10,7 @@ module.exports = async (kernel) => {
           env: { },                   // Edit this to customize environment variables (see documentation)
           path: "app",                // Edit this to customize the path to start the shell from
           message: [
-            `python gradio_app.py --profile {{args.profile}} --host 127.0.0.1 --port ${port}`
+            `python gradio_app.py --profile {{args.profile}} --enable_t23d --host 127.0.0.1 --port ${port}`
           ],
           on: [{
             // The regular expression pattern to monitor.
