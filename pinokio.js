@@ -1,6 +1,6 @@
 const path = require('path')
 module.exports = {
-  version: "3.3.20",
+  version: "3.4.0",
   title: "Hunyuan3D-2-LowVRAM",
   description: "[NVIDIA ONLY] Run Hunyuan3D-2 with 6GB VRAM: High-Resolution 3D Assets Generation with Large Scale Hunyuan3D Diffusion Models. https://github.com/deepbeepmeep/Hunyuan3D-2GP",
   icon: "icon.png",
