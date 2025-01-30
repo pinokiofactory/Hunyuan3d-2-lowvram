@@ -1,4 +1,18 @@
-module.exports = {
+module.exports = async kernel => {
+  // If no NVIDIA GPU, return minimal script that just shows notification
+  if (kernel.gpu !== 'nvidia') {
+    return {
+      run: [{
+        method: "notify",
+        params: {
+          html: "This app requires an NVIDIA GPU."
+        }
+      }]
+    }
+  }
+  // Otherwise return full installation script
+  
+  return {
   run: [
     {
       when: "{{platform === 'win32'}}",
@@ -34,7 +48,8 @@ module.exports = {
         venv: "env",                // Edit this to customize the venv folder path
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "uv pip install -r requirements.txt"
+          "uv pip install -r requirements.txt",
+          "uv pip install sentencepiece"
         ]
       }
     },
@@ -117,5 +132,6 @@ module.exports = {
     //    venv: "app/env"
     //  }
     //}
-  ]
+    ]
+  }
 }
