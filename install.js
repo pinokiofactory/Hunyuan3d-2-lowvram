@@ -1,19 +1,13 @@
-module.exports = async kernel => {
-  // If no NVIDIA GPU, return minimal script that just shows notification
-  if (kernel.gpu !== 'nvidia') {
-    return {
-      run: [{
-        method: "notify",
-        params: {
-          html: "This app requires an NVIDIA GPU."
-        }
-      }]
-    }
-  }
-  // Otherwise return full installation script
-  
-  return {
+module.exports = {
   run: [
+    {
+     when: "{{gpu !== 'nvidia'}}",
+     method: "notify",
+     params: {
+       html: "This app requires an NVIDIA GPU."
+     }, 
+      next: null
+    },
     {
       when: "{{platform === 'win32'}}",
       method: "shell.run",
@@ -132,6 +126,5 @@ module.exports = async kernel => {
     //    venv: "app/env"
     //  }
     //}
-    ]
-  }
+  ]
 }
