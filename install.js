@@ -1,6 +1,14 @@
 module.exports = {
   run: [
     {
+     when: "{{gpu !== 'nvidia'}}",
+     method: "notify",
+     params: {
+       html: "This app requires an NVIDIA GPU."
+     }, 
+      next: null
+    },
+    {
       when: "{{platform === 'win32'}}",
       method: "shell.run",
       params: {
@@ -34,7 +42,8 @@ module.exports = {
         venv: "env",                // Edit this to customize the venv folder path
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "uv pip install -r requirements.txt"
+          "uv pip install -r requirements.txt",
+          "uv pip install sentencepiece"
         ]
       }
     },
