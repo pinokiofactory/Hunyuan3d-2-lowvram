@@ -89,7 +89,7 @@ module.exports = {
         message: [
           "where link",
           "where cl",
-          "{{platform === 'win32' ? 'echo %PATH%' : ''}}",
+          "{{platform === 'win32' ? 'set' : ''}}",
           "python setup.py install"
         ]
       }
