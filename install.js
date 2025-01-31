@@ -87,6 +87,8 @@ module.exports = {
         },
         path: "app/hy3dgen/texgen/custom_rasterizer",                // Edit this to customize the path to start the shell from
         message: [
+          "where link",
+          "where cl",
           "python setup.py install"
         ]
       }
