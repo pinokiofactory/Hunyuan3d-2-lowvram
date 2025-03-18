@@ -58,15 +58,15 @@ module.exports = {
       } else {
         return [{
           icon: "fa-solid fa-power-off",
-          text: "Start 48GB RAM + 12GB VRAM",
-          href: "start.js",
-          params: {
-            profile: "1"
-          }
-        }, {
-          icon: "fa-solid fa-power-off",
           text: "Mini (new)",
           menu: [{
+            icon: "fa-solid fa-power-off",
+            text: "Start 48GB RAM + 12GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "1"
+            }
+          }, {
             icon: "fa-solid fa-power-off",
             text: "Start 48GB RAM + 6GB VRAM",
             href: "start.js",
@@ -99,6 +99,14 @@ module.exports = {
           icon: "fa-solid fa-power-off",
           text: "Multi Views (new)",
           menu: [{
+            icon: "fa-solid fa-power-off",
+            text: "Start 48GB RAM + 12GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "1",
+              mode: "--mv"
+            }
+          }, {
             icon: "fa-solid fa-power-off",
             text: "Start 48GB RAM + 6GB VRAM",
             href: "start.js",
@@ -135,6 +143,14 @@ module.exports = {
           icon: "fa-solid fa-power-off",
           text: "Original",
           menu: [{
+            icon: "fa-solid fa-power-off",
+            text: "Start 48GB RAM + 12GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "1",
+              mode: "--h2"
+            }
+          }, {
             icon: "fa-solid fa-power-off",
             text: "Start 48GB RAM + 6GB VRAM",
             href: "start.js",
