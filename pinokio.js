@@ -65,32 +65,108 @@ module.exports = {
           }
         }, {
           icon: "fa-solid fa-power-off",
-          text: "Start 48GB RAM + 6GB VRAM",
-          href: "start.js",
-          params: {
-            profile: "2"
-          }
+          text: "Mini (new)",
+          menu: [{
+            icon: "fa-solid fa-power-off",
+            text: "Start 48GB RAM + 6GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "2"
+            }
+          }, {
+            icon: "fa-solid fa-power-off",
+            text: "Start 32GB RAM + 12GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "3"
+            }
+          }, {
+            icon: "fa-solid fa-power-off",
+            text: "Start 32GB RAM + 6GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "4"
+            }
+          }, {
+            icon: "fa-solid fa-power-off",
+            text: "Start 24GB RAM + 6GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "5"
+            }
+          }]
         }, {
           icon: "fa-solid fa-power-off",
-          text: "Start 32GB RAM + 12GB VRAM",
-          href: "start.js",
-          params: {
-            profile: "3"
-          }
+          text: "Multi Views (new)",
+          menu: [{
+            icon: "fa-solid fa-power-off",
+            text: "Start 48GB RAM + 6GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "2",
+              mode: "--mv"
+            }
+          }, {
+            icon: "fa-solid fa-power-off",
+            text: "Start 32GB RAM + 12GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "3",
+              mode: "--mv"
+            }
+          }, {
+            icon: "fa-solid fa-power-off",
+            text: "Start 32GB RAM + 6GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "4",
+              mode: "--mv"
+            }
+          }, {
+            icon: "fa-solid fa-power-off",
+            text: "Start 24GB RAM + 6GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "5",
+              mode: "--mv"
+            }
+          }]
         }, {
           icon: "fa-solid fa-power-off",
-          text: "Start 32GB RAM + 6GB VRAM",
-          href: "start.js",
-          params: {
-            profile: "4"
-          }
-        }, {
-          icon: "fa-solid fa-power-off",
-          text: "Start 24GB RAM + 6GB VRAM",
-          href: "start.js",
-          params: {
-            profile: "5"
-          }
+          text: "Original",
+          menu: [{
+            icon: "fa-solid fa-power-off",
+            text: "Start 48GB RAM + 6GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "2",
+              mode: "--h2"
+            }
+          }, {
+            icon: "fa-solid fa-power-off",
+            text: "Start 32GB RAM + 12GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "3",
+              mode: "--h2"
+            }
+          }, {
+            icon: "fa-solid fa-power-off",
+            text: "Start 32GB RAM + 6GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "4",
+              mode: "--h2"
+            }
+          }, {
+            icon: "fa-solid fa-power-off",
+            text: "Start 24GB RAM + 6GB VRAM",
+            href: "start.js",
+            params: {
+              profile: "5",
+              mode: "--h2"
+            }
+          }]
         }, {
           icon: "fa-solid fa-plug",
           text: "Update",
