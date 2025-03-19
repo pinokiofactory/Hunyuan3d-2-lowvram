@@ -58,7 +58,7 @@ module.exports = {
       } else {
         return [{
           icon: "fa-solid fa-power-off",
-          text: "Hunyuan3D-2mini",
+          text: "Hunyuan3D-2mini (Small)",
           menu: [{
             icon: "fa-solid fa-cube",
             text: "Original",
@@ -145,7 +145,7 @@ module.exports = {
           }]
         }, {
           icon: "fa-solid fa-power-off",
-          text: "Hunyuan3D-2mv (multi view)",
+          text: "Hunyuan3D-2mv (Multi View)",
           menu: [{
             icon: "fa-solid fa-cube",
             text: "Original",
