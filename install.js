@@ -39,11 +39,16 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        build: true,
+ //       build: true,
+ //       env: {
+ //         USE_NINJA: 0,
+ //         DISTUTILS_USE_SDK: 1,
+ //         NVCC_PREPEND_FLAGS: "-ccbin {{which('g++')}}"
+ //       },
         venv: "env",                // Edit this to customize the venv folder path
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "uv pip install --no-build-isolation diso==0.1.4",
+//          "uv pip install --no-build-isolation diso==0.1.4",
           "uv pip install -r requirements.txt",
           "uv pip install sentencepiece"
         ]
