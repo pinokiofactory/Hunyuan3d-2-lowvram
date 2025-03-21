@@ -51,7 +51,7 @@ module.exports = {
           "uv pip install --no-build-isolation diso==0.1.4",
           "uv pip install -r requirements.txt",
           "uv pip install sentencepiece",
-          "uv pip install transformers==4.49.0"
+//          "uv pip install transformers==4.49.0"
         ]
       }
     },
