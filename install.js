@@ -4,7 +4,8 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone {{platform === 'darwin' ? 'https://github.com/peanutcocktail/Hunyuan3D-2' : 'https://github.com/deepbeepmeep/Hunyuan3D-2GP'}} app",
+          //"git clone {{platform === 'darwin' ? 'https://github.com/peanutcocktail/Hunyuan3D-2' : 'https://github.com/deepbeepmeep/Hunyuan3D-2GP'}} app",
+          "git clone {{platform === 'darwin' ? 'https://github.com/Tencent/Hunyuan3D-2' : 'https://github.com/deepbeepmeep/Hunyuan3D-2GP'}} app",
         ]
       }
     },
