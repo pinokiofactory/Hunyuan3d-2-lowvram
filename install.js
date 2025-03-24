@@ -1,25 +1,11 @@
 module.exports = {
   run: [
     {
-     when: "{{gpu !== 'nvidia'}}",
-     method: "notify",
-     params: {
-       html: "This app requires an NVIDIA GPU."
-     }, 
-      next: null
-    },
-    {
-      when: "{{platform === 'win32'}}",
-      method: "shell.run",
-      params: {
-        message: "set"
-      }
-    },
-    {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/deepbeepmeep/Hunyuan3D-2GP app",
+          //"git clone {{platform === 'darwin' ? 'https://github.com/peanutcocktail/Hunyuan3D-2' : 'https://github.com/deepbeepmeep/Hunyuan3D-2GP'}} app",
+          "git clone {{platform === 'darwin' ? 'https://github.com/Tencent/Hunyuan3D-2' : 'https://github.com/deepbeepmeep/Hunyuan3D-2GP'}} app",
         ]
       }
     },
@@ -48,7 +34,8 @@ module.exports = {
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
           "uv pip install setuptools==65.5.0",
-          "uv pip install --no-build-isolation diso==0.1.4",
+          "{{gpu === 'nvidia' ? 'uv pip install --no-build-isolation diso==0.1.4' : null}}",
+          "{{platform === 'darwin' ? 'uv pip install numba>0.60.0' : null}}",
           "uv pip install -r requirements.txt",
           "uv pip install sentencepiece",
 //          "uv pip install transformers==4.49.0"
@@ -65,7 +52,6 @@ module.exports = {
         ]
       }
     },
-    // Edit this step with your custom install commands
     {
       when: "{{platform === 'linux'}}",
       method: "shell.run",
@@ -84,7 +70,7 @@ module.exports = {
       }
     },
     {
-      when: "{{platform !== 'linux'}}",
+      when: "{{platform === 'win32'}}",
       method: "shell.run",
       params: {
         build: true,
@@ -120,7 +106,7 @@ module.exports = {
       }
     },
     {
-      when: "{{platform !== 'linux'}}",
+      when: "{{platform === 'win32'}}",
       method: "shell.run",
       params: {
         build: true,

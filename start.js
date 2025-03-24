@@ -1,5 +1,9 @@
 module.exports = async (kernel) => {
   const port = await kernel.port()
+  let cmd = `python gradio_app.py {{args.mode ? args.mode : ''}} --profile {{args.profile}} --enable_t23d --host 127.0.0.1 --port ${port}`
+  if (kernel.platform === 'darwin') {
+    cmd = `python gradio_app.py {{args.model_path ? '--model_path ' + args.model_path : ''}} {{ args.subfolder ? '--subfolder ' + args.subfolder : ''}} --enable_t23d --host 127.0.0.1 --port ${port} --device mps --enable_flashvdm`
+  }
   return {
     daemon: true,
     run: [
@@ -9,9 +13,7 @@ module.exports = async (kernel) => {
           venv: "env",                // Edit this to customize the venv folder path
           env: { },                   // Edit this to customize environment variables (see documentation)
           path: "app",                // Edit this to customize the path to start the shell from
-          message: [
-            `python gradio_app.py {{args.mode ? args.mode : ''}} --profile {{args.profile}} --enable_t23d --host 127.0.0.1 --port ${port}`
-          ],
+          message: cmd,
           on: [{
             // The regular expression pattern to monitor.
             // When this pattern occurs in the shell terminal, the shell will return,
