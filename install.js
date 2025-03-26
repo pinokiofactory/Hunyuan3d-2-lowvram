@@ -33,7 +33,7 @@ module.exports = {
         venv: "env",                // Edit this to customize the venv folder path
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "uv pip install setuptools==65.5.0",
+          "uv pip install setuptools==65.5.0 wheel",
           "{{gpu === 'nvidia' ? 'uv pip install --no-build-isolation diso==0.1.4' : null}}",
           "{{platform === 'darwin' ? 'uv pip install numba>0.60.0' : null}}",
           "uv pip install -r requirements.txt",
