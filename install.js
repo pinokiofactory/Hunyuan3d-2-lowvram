@@ -29,11 +29,11 @@ module.exports = {
         venv: "env",                // Edit this to customize the venv folder path
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "uv pip install ./wheels/diso-0.1.4-cp310-cp310-win_amd64.whl",
+          "uv pip install ../wheels/diso-0.1.4-cp310-cp310-win_amd64.whl",
           "uv pip install -r requirements.txt",
           "uv pip install sentencepiece",
-          "uv pip install ./wheels/custom_rasterizer-0.1-cp310-cp310-win_amd64.whl",
-          "uv pip install ./wheels/mesh_processor-0.0.0-cp310-cp310-win_amd64.whl"
+          "uv pip install ../wheels/custom_rasterizer-0.1-cp310-cp310-win_amd64.whl",
+          "uv pip install ../wheels/mesh_processor-0.0.0-cp310-cp310-win_amd64.whl"
         ]
       },
         next: null
