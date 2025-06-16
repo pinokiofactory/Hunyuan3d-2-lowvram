@@ -22,7 +22,7 @@ module.exports = {
       }
     },
     {
-      when: "{{platform === 'win32' && gpu === 'nvidia' && kernel.gpu_model && / 50.+/.test(kernel.gpu_model) }}",
+      when: "{{platform === 'win32' && gpu === 'nvidia' && kernel.gpus && kernel.gpus.find(x => / 50.+/.test(x.model))}}",
       method: "shell.run",
       params: {
         env: { },
