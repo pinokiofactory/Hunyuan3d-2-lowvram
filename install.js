@@ -22,7 +22,7 @@ module.exports = {
       }
     },
     {
-      when: "{{platform === 'win32' && gpu === 'nvidia' && kernel.gpus && kernel.gpus.find(x => / 50.+/.test(x.model))}}",
+      when: "{{platform === 'win32' && gpu === 'nvidia'",
       method: "shell.run",
       params: {
         env: { },
@@ -87,25 +87,6 @@ module.exports = {
       }
     },
     {
-      when: "{{platform === 'win32'}}",
-      method: "shell.run",
-      params: {
-        build: true,
-        venv: "../../../env",                // Edit this to customize the venv folder path
-        env: {
-          USE_NINJA: 0,
-          DISTUTILS_USE_SDK: 1
-        },
-        path: "app/hy3dgen/texgen/custom_rasterizer",                // Edit this to customize the path to start the shell from
-        message: [
-          "where link",
-          "where cl",
-          "{{platform === 'win32' ? 'set' : ''}}",
-          "python setup.py install"
-        ]
-      }
-    },
-    {
       when: "{{platform === 'linux'}}",
       method: "shell.run",
       params: {
@@ -115,22 +96,6 @@ module.exports = {
           USE_NINJA: 0,
           DISTUTILS_USE_SDK: 1,
           NVCC_PREPEND_FLAGS: "-ccbin {{which('g++')}}"
-        },
-        path: "app/hy3dgen/texgen/differentiable_renderer",                // Edit this to customize the path to start the shell from
-        message: [
-          "python setup.py install"
-        ]
-      }
-    },
-    {
-      when: "{{platform === 'win32'}}",
-      method: "shell.run",
-      params: {
-        build: true,
-        venv: "../../../env",                // Edit this to customize the venv folder path
-        env: {
-          USE_NINJA: 0,
-          DISTUTILS_USE_SDK: 1
         },
         path: "app/hy3dgen/texgen/differentiable_renderer",                // Edit this to customize the path to start the shell from
         message: [
