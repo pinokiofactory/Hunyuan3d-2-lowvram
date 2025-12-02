@@ -5,6 +5,9 @@ module.exports = async (kernel) => {
     cmd = `python gradio_app.py {{args.model_path ? '--model_path ' + args.model_path : ''}} {{ args.subfolder ? '--subfolder ' + args.subfolder : ''}} --enable_t23d --host 127.0.0.1 --port ${port} --device mps --enable_flashvdm`
   }
   return {
+    requires: {
+      bundle: "ai",
+    },
     daemon: true,
     run: [
       {
