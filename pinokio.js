@@ -1,6 +1,6 @@
 const path = require('path')
 module.exports = {
-  version: "3.4.0",
+  version: "3.7",
   title: "Hunyuan3D-2-LowVRAM",
   description: "Text/Image to 3D (Cross Platform: Mac + Windows + Linux): High-Resolution 3D Assets Generation with Large Scale Hunyuan3D Diffusion Models. https://github.com/deepbeepmeep/Hunyuan3D-2GP",
   icon: "icon.png",
