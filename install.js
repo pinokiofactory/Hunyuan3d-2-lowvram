@@ -32,7 +32,7 @@ module.exports = {
         message: [
           "uv pip install ../wheels/diso-0.1.4-cp310-cp310-win_amd64.whl",
           "uv pip install -r requirements.txt",
-          "uv pip install sentencepiece",
+          "uv pip install sentencepiece hf-xet",
           "uv pip install ../wheels/custom_rasterizer-0.1-cp310-cp310-win_amd64.whl",
           "uv pip install ../wheels/mesh_processor-0.0.0-cp310-cp310-win_amd64.whl"
         ]
