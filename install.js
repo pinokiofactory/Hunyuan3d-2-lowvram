@@ -1,23 +1,24 @@
 module.exports = {
+  requires: {
+    bundle: "ai"
+  },
   run: [
     {
       method: "shell.run",
       params: {
         message: [
-          //"git clone {{platform === 'darwin' ? 'https://github.com/peanutcocktail/Hunyuan3D-2' : 'https://github.com/deepbeepmeep/Hunyuan3D-2GP'}} app",
           "git clone {{platform === 'darwin' ? 'https://github.com/Tencent/Hunyuan3D-2' : 'https://github.com/deepbeepmeep/Hunyuan3D-2GP'}} app",
         ]
       }
     },
-    // Delete this step if your project does not use torch
     {
       method: "script.start",
       params: {
         uri: "torch.js",
         params: {
-          venv: "env",                // Edit this to customize the venv folder path
-          path: "app",                // Edit this to customize the path to start the shell from
-          // xformers: true   // uncomment this line if your project requires xformers
+          venv: "env",
+          path: "app",
+          // xformers: true
         }
       }
     },
@@ -26,8 +27,8 @@ module.exports = {
       method: "shell.run",
       params: {
         env: { },
-        venv: "env",                // Edit this to customize the venv folder path
-        path: "app",                // Edit this to customize the path to start the shell from
+        venv: "env",
+        path: "app",
         message: [
           "uv pip install ../wheels/diso-0.1.4-cp310-cp310-win_amd64.whl",
           "uv pip install -r requirements.txt",
@@ -38,7 +39,6 @@ module.exports = {
       },
         next: null
     },
-    // Edit this step with your custom install commands
     {
       method: "shell.run",
       params: {
@@ -47,15 +47,14 @@ module.exports = {
           USE_NINJA: 0,
           DISTUTILS_USE_SDK: 1,
         },
-        venv: "env",                // Edit this to customize the venv folder path
-        path: "app",                // Edit this to customize the path to start the shell from
+        venv: "env",
+        path: "app",
         message: [
           "uv pip install setuptools==65.5.0 wheel",
           "{{gpu === 'nvidia' ? 'uv pip install --no-build-isolation diso==0.1.4' : null}}",
           "{{platform === 'darwin' ? 'uv pip install numba>0.60.0' : null}}",
           "uv pip install -r requirements.txt",
-          "uv pip install sentencepiece",
-//          "uv pip install transformers==4.49.0"
+          "uv pip install sentencepiece hf-xet",
         ]
       }
     },
@@ -74,13 +73,13 @@ module.exports = {
       method: "shell.run",
       params: {
         build: true,
-        venv: "../../../env",                // Edit this to customize the venv folder path
+        venv: "../../../env",
         env: {
           USE_NINJA: 0,
           DISTUTILS_USE_SDK: 1,
           NVCC_PREPEND_FLAGS: "-ccbin {{which('g++')}}"
         },
-        path: "app/hy3dgen/texgen/custom_rasterizer",                // Edit this to customize the path to start the shell from
+        path: "app/hy3dgen/texgen/custom_rasterizer",
         message: [
           "python setup.py install"
         ]
@@ -91,23 +90,17 @@ module.exports = {
       method: "shell.run",
       params: {
         build: true,
-        venv: "../../../env",                // Edit this to customize the venv folder path
+        venv: "../../../env",
         env: {
           USE_NINJA: 0,
           DISTUTILS_USE_SDK: 1,
           NVCC_PREPEND_FLAGS: "-ccbin {{which('g++')}}"
         },
-        path: "app/hy3dgen/texgen/differentiable_renderer",                // Edit this to customize the path to start the shell from
+        path: "app/hy3dgen/texgen/differentiable_renderer",
         message: [
           "python setup.py install"
         ]
       }
-    },
-    //{
-    //  method: "fs.link",
-    //  params: {
-    //    venv: "app/env"
-    //  }
-    //}
+    }
   ]
 }
