@@ -23,7 +23,7 @@ module.exports = {
       }
     },
     {
-      when: "{{platform === 'win32' && gpu === 'nvidia'",
+      when: "{{platform === 'win32' && gpu === 'nvidia'}}",
       method: "shell.run",
       params: {
         env: { },
